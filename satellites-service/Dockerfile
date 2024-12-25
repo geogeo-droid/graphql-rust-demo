@@ -1,4 +1,11 @@
-FROM rust:1.78.0 as builder
+# 開発環境
+FROM rust:1.81 as develop-stage
+WORKDIR /app
+RUN cargo install cargo-watch --locked
+COPY satellites-service/ ./
+
+# ビルド環境
+FROM rust:1.81 as builder
 
 ENV CARGO_TERM_COLOR always
 RUN apt-get update && apt-get install -y libpq-dev
