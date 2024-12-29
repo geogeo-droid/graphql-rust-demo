@@ -1,10 +1,12 @@
 use std::sync::{Arc, Mutex};
 
 use actix_web::{guard, web, HttpRequest, HttpResponse, Result};
+
 use async_graphql::dataloader::DataLoader;
 use async_graphql::http::{playground_source, GraphQLPlaygroundConfig};
 use async_graphql::{Context, Schema};
 use async_graphql_actix_web::{GraphQLRequest, GraphQLResponse, GraphQLSubscription};
+
 use diesel::r2d2::{ConnectionManager, PooledConnection};
 use diesel::PgConnection;
 use diesel_migrations::MigrationHarness;
