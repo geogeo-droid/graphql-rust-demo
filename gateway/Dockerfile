@@ -16,7 +16,8 @@ RUN touch src/main.rs
 RUN cargo install --path . --locked
 
 FROM debian:bookworm-slim
-RUN apt-get update && apt-get install -y ca-certificates
+RUN apt-get update && apt-get install -y ca-certificates curl
+RUN curl -sSL https://rover.apollo.dev/nix/latest | sh
 RUN update-ca-certificates
 COPY --from=builder /usr/local/cargo/bin/gateway /bin/
 CMD ["gateway"]
