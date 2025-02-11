@@ -11,6 +11,10 @@ Articles:
 
 The source code is available on https://github.com/rkudryashov/graphql-rust-demo[GitHub] and https://gitlab.com/romankudryashov/graphql-rust-demo[GitLab].
 
+### run
+```
+docker-compose up --build -d
+```
 
 ### create schema supergraph
 ```
