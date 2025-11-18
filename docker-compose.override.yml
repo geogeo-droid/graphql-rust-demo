@@ -1,5 +1,4 @@
 # development configuration
-version: '3.9'
 services:
 
   planets-service:
